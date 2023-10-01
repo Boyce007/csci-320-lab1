@@ -1,9 +1,12 @@
-/*
- * Implement your solution in thi file
- *
- */
 #include <string.h>
+#include <stdio.h>
+
 char* readString(char* filename) {
+
+    FILE* file =  fopen(filename,"r");
+    
+
+
 
 }
 char* substring(char* input, int start, int end ) {
@@ -21,8 +24,10 @@ char* substring(char* input, int start, int end ) {
 }
 char* explode(char* input) {
     char* result ='\0';
-    #define int length = strlen(*input);
-    char* resultptr = (unsigned char*) malloc(((length(length+1))/2) +1 * sizeof(char));
+    int length = strlen(input);
+    int explodedLength = (length*(length+1))/2 +1;
+    char* resultptr = (unsigned char*) malloc(explodedLength* sizeof(char));
+    
 
 
 
