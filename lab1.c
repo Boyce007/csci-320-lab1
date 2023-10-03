@@ -1,29 +1,28 @@
 #include <string.h>
 #include <stdio.h>
+#include "lab1.h"
 
 char* readString(char* filename) {
 
     FILE* file =  fopen(filename,"r");
-    
-
-
-
-}
-char* substring(char* input, int start, int end ) {
-    int c = 0;
-    char output; 
-
-    char* outputptr;
-    outputptr  = malloc((start- end)*sizeof(char));
-    strcat(output,outputptr);
-    while (c<start) {
-    
+    if (file == NULL) {
+        fprintf(stderr ,"No file is found");
     }
+    char* str = (char*) malloc(MAX_LINE_LEN *sizeof(char));
+    if (str != NULL) {
+        fgets(str,MAX_LINE_LEN,file);
+        fclose(file);
 
-    
+    }
+    return str;
+
+
+
+
 }
+
 char* explode(char* input) {
-    char* result ='\0';
+    char* exploedtring ='\0';
     int length = strlen(input);
     int explodedLength = (length*(length+1))/2 +1;
     char* resultptr = (unsigned char*) malloc(explodedLength* sizeof(char));
