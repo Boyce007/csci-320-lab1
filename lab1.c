@@ -12,27 +12,22 @@ char* readString(char* filename) {
     if (str != NULL) {
         fgets(str,MAX_LINE_LEN,file);
         fclose(file);
-
     }
     return str;
-
-
-
 
 }
 
 char* explode(char* input) {
-    char* exploedtring ='\0';
     int length = strlen(input);
     int explodedLength = (length*(length+1))/2 +1;
-    char* resultptr = (unsigned char*) malloc(explodedLength* sizeof(char));
-    
-
-
-
-    // void *memcpy(void *dest, void *src, size_t count);
-    // char *strcat(char *dest, const char *src)
-
+    char* exploedString = (char*) malloc(explodedLength* sizeof(char));
+    if (exploedString==NULL) {
+        fprintf(stderr, "No input is found");
+    }
+    for(int i = 0;i<length;i++) {
+        strncpy(exploedString,input,i);
+    }
+    return exploedString;
 }
 
 
