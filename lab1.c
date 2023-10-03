@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "lab1.h"
+#include <stdlib.h>
 
 char* readString(char* filename) {
 
@@ -17,15 +18,15 @@ char* readString(char* filename) {
 
 }
 
-char* explode(char* input) {
-    int length = strlen(input);
+char* mysteryExplode(const char* str) {
+    int length = strlen(str);
     int explodedLength = (length*(length+1))/2 +1;
     char* exploedString = (char*) malloc(explodedLength* sizeof(char));
     if (exploedString==NULL) {
         fprintf(stderr, "No input is found");
     }
     for(int i = 0;i<length;i++) {
-        strncpy(exploedString,input,i);
+        strncpy(exploedString,str,i);
     }
     return exploedString;
 }

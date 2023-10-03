@@ -1,4 +1,4 @@
-explode: main.0 lab1.0
+explode: main.o lab1.o
 	$(CC) -o $@ $?
 
 
