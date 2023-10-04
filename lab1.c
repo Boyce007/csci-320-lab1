@@ -13,7 +13,10 @@ char* readString(char* filename) {
     if (str != NULL) {
         fgets(str,MAX_LINE_LEN,file);
         fclose(file);
-    }
+} else {
+    free(str);
+}
+
     return str;
 
 }
