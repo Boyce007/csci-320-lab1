@@ -24,14 +24,15 @@ char* readString(char* filename) {
 char* mysteryExplode(const char* str) {
     int length = strlen(str);
     int explodedLength = (length*(length+1))/2 +1;
-    char* exploedString = (char*) malloc(explodedLength* sizeof(char));
-    if (exploedString==NULL) {
+    char* explodedString = (char*) malloc(explodedLength* sizeof(char));
+    if (explodedString==NULL) {
         fprintf(stderr, "No input is found");
     }
     for(int i = 0;i<length;i++) {
-        strncpy(exploedString,str,i);
+        strncpy(explodedString,str,i);
+        fprintf("%s",explodedString);
     }
-    return exploedString;
+    return explodedString;
 }
 
 
